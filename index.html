@@ -10,34 +10,35 @@
     <script src="./dist/js/script.js"></script>
 </head>
 
-<body class="bg-white dark:bg-black">
-    <!-- navbar -->
-    <nav class="flex items-center justify-between flex-wrap bg-teal-800 p-3">
-        <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/>
-            </svg>
-            <span class="font-semibold text-xl tracking-tight">AdDash</span>
-        </div>
-        <div class="block lg:hidden">
-            <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+<body class="bg-gray-300 dark:bg-black antialiased">
+    <!-- sidebar -->
+    <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
+        <div class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between w-full mx-auto">
+            <button class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" type="button" onclick="toggleNav('collapse')">
+                <svg class="fill-current text-black" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z" id="Combined-Shape"></path>
                 </svg>
             </button>
-        </div>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div class="text-sm lg:flex-grow">
-                <!-- <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a> -->
-            </div>
-            <div>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4"><i class="fa fa-home"></i></a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Examples</a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white">Blog</a>
-            </div>
+            <a href="#" class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm font-semibold p-4 px-0">
+                AdDash
+            </a>
+            <ul class="md:hidden items-center flex flex-wrap list-none">
+                <li class="inline-block relative">
+                    <a href="#user" class="text-gray-600 block py-1 px-3" onclick="openDropdown(event, 'notif-dropdown')">
+                        <svg class="fill-current text-white" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="M8.02739671,2.33180314 C5.68271203,3.14769073 4,5.37733614 4,8 L4,14 L1,16 L1,17 L19,17 L19,16 L16,14 L16,8 C16,5.37733614 14.317288,3.14769073 11.9726033,2.33180314 C11.9906226,2.22388264 12,2.11303643 12,2 C12,0.8954305 11.1045695,0 10,0 C8.8954305,0 8,0.8954305 8,2 C8,2.11303643 8.0093774,2.22388264 8.02739671,2.33180314 L8.02739671,2.33180314 Z M12,18 C12,19.1045695 11.1045695,20 10,20 C8.8954305,20 8,19.1045695 8,18 L12,18 L12,18 Z" id="Combined-Shape"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute w-32 min-w-full bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1 hidden">
+                        <a href="#" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800">Action</a>
+                        <a href="#" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800">Another Action</a>
+                        <a href="#" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800">Something else</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
-    <!-- end of navbar -->
+    <!-- end of sidebar -->
 </body>
 
 </html>
